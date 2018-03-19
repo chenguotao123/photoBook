@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="monitor-signature" content="monitor:player:html5">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge">
+
+	<meta name="Keywords" content="微云商电子画册" />
+	<meta name="Description" content="微云商电子画册"/>
+	<title>微云商电子画册</title>
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/player.css" />
+	<link rel="stylesheet" href="css/phoneTemplate.css" />
+
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript">
+		var totalCount = 8;
+		$.ajax({
+			url:'./demo.php',
+			data:{},
+			dataType: 'json',
+			async: false,  //同步获取图片数
+			success: function(res) {
+				if(res){
+					totalCount = res;
+				}
+				// alert(res);
+			},
+			fail: function(err) {
+				// console.log(err);
+			}
+		})
+	</script>
+	<script src="js/config.js"></script>
+</head>	
+<body>
+	<script src="js/LoadingJS.js"></script>
+	<script src="js/main.js"></script>
+	<link rel="stylesheet" href="css/template.css" />
+</body>
+</html>
