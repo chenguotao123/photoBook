@@ -20887,7 +20887,7 @@ var BookInstructionsPage = Class({
         this.initEvent()
     },
     initHtml: function(b, c) {
-        this.container = $("<div class='bookInstructions helpPage'></div>");
+        this.container = $("<div class='bookInstructions helpPage' style='display:none;'></div>");
         this.title = $("<h3 class='bookInstructions helpTitle'>" + this.getTitle() + "</h3>");
         this.image = $("<div class='bookInstructions helpPageImg'" + this.getImageURL(c) + "></div>");
         this.description = $("<div class='bookInstructions helpBottomText'>" + this.getDescription(c) + "</div>");
@@ -20960,7 +20960,7 @@ BookInstructions = Class({
         this.container = $("<div class='bookInstructions helpBody hide'></div>");
         this.swiper = $("<div class='bookInstructions swiper'></div>");
         this.dots = $('<ul class="bookInstructions helpBullet"></ul>');
-        for (var c = 1; 5 >= c; c++) this.pages.push(new BookInstructionsPage(this.swiper, c)),
+        // for (var c = 1; 5 >= c; c++) this.pages.push(new BookInstructionsPage(this.swiper, c)),
         new BookInstructionsDot(this.dots, c);
         this.closeBtn = $('<span class="bookInstructions icon_drop" ><img src=' + this.closeSrc + "></span>");
         b.append(this.container);
@@ -51631,7 +51631,7 @@ Class("PhoneToolbar", {
         1 >= this.buttons.length && bookConfig.enablePageBack && (this.buttons.remove(this.buttons.find("gotopage").get(0)), this.buttons.add(new PhoneBackwardButton), this.buttons.add(new PhoneFirstPageButton), this.buttons.add(new PhonePreviousPageButton), this.buttons.add(new PhoneNextPageButton), this.buttons.add(new PhoneLastPageButton), this.buttons.add(new PhoneForwardButton));
         3 >= this.buttons.length && !bookConfig.enablePageBack && (this.buttons.remove(this.buttons.find("gotopage").get(0)), this.buttons.add(new PhoneFirstPageButton), this.buttons.add(new PhonePreviousPageButton), this.buttons.add(new PhoneNextPageButton), this.buttons.add(new PhoneLastPageButton));
         6 < this.buttons.length && this.buttons.add(new PhoneMoreButton);
-        // bookConfig.InstructionsButtonVisible && this.buttons.add(new PhoneInstructionsButton);
+        //bookConfig.InstructionsButtonVisible && this.buttons.add(new PhoneInstructionsButton);
         this.buttons.each(function(b) {
             b.setCallback(this.afterButtonClick.bind(this));
             this.setButtonTitle(b)
